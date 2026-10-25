@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="VoteWise AI helps people assess election-related claims carefully and find ways to verify them.">
+  <title>VoteWise AI — Check the claim, find the evidence</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <style>
+    :root{--bg:#08111f;--panel:#111d30;--panel2:#16243a;--line:#263851;--text:#edf5ff;--muted:#a8b7ca;--green:#42d6a4;--cyan:#6dd8ed;--amber:#ffca75;--red:#ff8d96}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#122a3c 0,transparent 42%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+    a{color:var(--cyan)}.wrap{width:min(1100px,92%);margin:auto}.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid #ffffff14}.brand{display:flex;gap:10px;align-items:center;font-weight:850;letter-spacing:.3px}.mark{display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,var(--green),var(--cyan));color:#06131e;font-size:20px}.pill{border:1px solid #31516a;color:var(--cyan);border-radius:99px;padding:5px 11px;font-size:12px}
+    .hero{padding:42px 0 28px;max-width:800px}.eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase}.hero h1{font-size:clamp(32px,6vw,58px);line-height:1.08;letter-spacing:-1.8px;margin:12px 0}.hero p{color:var(--muted);font-size:17px;max-width:700px}.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin:22px 0 38px}.card{background:linear-gradient(145deg,#132139,#0e192a);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 14px 40px #0002}.card h2{font-size:19px;margin:0 0 6px}.sub{color:var(--muted);font-size:13px;margin-top:0}.label{display:block;font-size:13px;font-weight:750;margin:18px 0 7px}textarea,select,input{width:100%;border:1px solid #30435d;border-radius:12px;background:#091525;color:var(--text);padding:13px;font:inherit;outline:none}textarea:focus,select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #6dd8ed18}textarea{min-height:145px;resize:vertical}select{cursor:pointer}.btn{border:0;border-radius:12px;background:linear-gradient(100deg,var(--green),var(--cyan));color:#06131e;font-weight:850;padding:13px 18px;font-size:15px;cursor:pointer;width:100%;margin-top:14px}.btn:disabled{opacity:.55;cursor:wait}.note{font-size:12px;color:var(--muted);margin:10px 0 0}.result-empty{display:flex;min-height:280px;align-items:center;justify-content:center;text-align:center;color:var(--muted);padding:18px}.result-empty .symbol{font-size:35px;display:block;margin-bottom:10px}.result{display:none}.status{display:inline-flex;border:1px solid #31516a;border-radius:99px;padding:5px 10px;font-size:12px;font-weight:800;margin:5px 0 12px}.status.caution{color:var(--amber);border-color:#76592d}.status.good{color:var(--green);border-color:#286d59}.status.danger{color:var(--red);border-color:#7d3c49}.result h3{margin:8px 0;font-size:21px}.result p{color:#d2deec}.result ul{padding-left:20px;color:#d2deec}.result li{margin:7px 0}.section{border-top:1px solid var(--line);margin-top:17px;padding-top:14px}.section h4{margin:0 0 6px;font-size:13px;color:var(--cyan);text-transform:uppercase;letter-spacing:.8px}.source-list a{display:block;margin:8px 0;overflow-wrap:anywhere}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 40px}.feature{border:1px solid var(--line);border-radius:16px;padding:18px;background:#0e1a2b}.feature b{display:block;margin:8px 0}.feature p{font-size:13px;color:var(--muted);margin:0}.foot{border-top:1px solid #ffffff14;padding:22px 0 35px;color:var(--muted);font-size:12px}.warning{background:#2b2417;border:1px solid #68522a;color:#f5d9a3;padding:13px 14px;border-radius:12px;font-size:13px;margin-top:16px}.error{color:var(--red);font-size:13px;margin-top:10px;white-space:pre-wrap}.small-btn{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:10px;padding:8px 11px;cursor:pointer;font-size:12px}
+    @media(max-width:760px){.layout{grid-template-columns:1fr}.features{grid-template-columns:1fr}.hero{padding-top:30px}.card{padding:18px}.top .pill{display:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand"><div class="mark">✓</div><span>VOTEWISE <span style="color:var(--green)">AI</span></span></div>
+      <span class="pill">NONPARTISAN CIVIC TECHNOLOGY</span>
+    </header>
+    <section class="hero">
+      <div class="eyebrow">Check the claim. Find the evidence.</div>
+      <h1>Pause before you share.<br><span style="color:var(--green)">Verify before you believe.</span></h1>
+      <p>VoteWise AI helps you examine election-related claims, spot missing context, and find credible places to verify information. It is a research assistant, not an official election authority.</p>
+    </section>
+
+    <main class="layout">
+      <section class="card">
+        <h2>Analyse an election claim</h2>
+        <p class="sub">Paste a message, headline, social post, or claim you want to investigate.</p>
+        <label class="label" for="claim">Claim to check</label>
+        <textarea id="claim" maxlength="5000" placeholder="Example: A message says polling units have changed location in my area..."></textarea>
+        <label class="label" for="language">Response language</label>
+        <select id="language">
+          <option value="English">English</option>
+          <option value="Hausa">Hausa</option>
+        </select>
+        <label class="label" for="context">Optional context (state, date, or where you saw it)</label>
+        <input id="context" maxlength="500" placeholder="e.g. Gombe State, shared on WhatsApp today">
+        <button class="btn" id="analyseBtn">Analyse claim</button>
+        <div id="error" class="error" role="alert"></div>
+        <p class="note">Please do not submit private information, phone numbers, voter identification numbers, or names of private individuals.</p>
+      </section>
+
+      <section class="card">
+        <h2>Assessment</h2>
+        <p class="sub">Read the reasoning and follow the verification steps.</p>
+        <div id="empty" class="result-empty"><div><span class="symbol">⌕</span><b>Your analysis will appear here</b><br><span class="note">VoteWise will explain what is known, what is uncertain, and what evidence is still needed.</span></div></div>
+        <div id="result" class="result" aria-live="polite">
+          <span id="status" class="status caution">Needs verification</span>
+          <h3 id="verdict"></h3>
+          <p id="summary"></p>
+          <div class="section"><h4>Why this assessment?</h4><ul id="reasons"></ul></div>
+          <div class="section"><h4>What to verify next</h4><ul id="steps"></ul></div>
+          <div class="section"><h4>Potential sources</h4><div id="sources" class="source-list"></div></div>
+          <div class="warning" id="caution"></div>
+          <button class="small-btn" id="copyBtn" type="button">Copy assessment</button>
+        </div>
+      </section>
+    </main>
+
+    <section class="features">
+      <div class="feature"><span style="font-size:23px">🔎</span><b>Evidence-first analysis</b><p>Separates claims from evidence and highlights missing details instead of guessing.</p></div>
+      <div class="feature"><span style="font-size:23px">🌍</span><b>Accessible civic information</b><p>English and Hausa responses, designed for mobile screens and low-friction access.</p></div>
+      <div class="feature"><span style="font-size:23px">🛡️</span><b>Nonpartisan by design</b><p>No candidate endorsements, voter profiling, or automatic claims that an election was rigged.</p></div>
+    </section>
+
+    <footer class="foot">
+      <b>VoteWise AI — prototype for civic information and election integrity.</b>
+      <p>AI can make mistakes. This prototype does not independently verify claims against live records unless sources are explicitly provided or retrieved. Confirm important election information with official INEC communications and multiple reliable sources. Do not use this tool as proof of fraud or as a substitute for professional election observation.</p>
+      <p>Built as a hackathon MVP. Not affiliated with or endorsed by INEC or Meta.</p>
+    </footer>
+  </div>
+<script>
+const btn = document.getElementById('analyseBtn');
+const errorBox = document.getElementById('error');
+const empty = document.getElementById('empty');
+const result = document.getElementById('result');
+const safeText = (el, value) => { el.textContent = value || ''; };
+function addItems(id, items) {
+  const list = document.getElementById(id);
+  list.replaceChildren();
+  (Array.isArray(items) ? items : []).forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = String(item);
+    list.appendChild(li);
+  });
+}
+btn.addEventListener('click', async () => {
+  const claim = document.getElementById('claim').value.trim();
+  const language = document.getElementById('language').value;
+  const context = document.getElementById('context').value.trim();
+  errorBox.textContent = '';
+  if (claim.length < 12) {
+    errorBox.textContent = 'Please enter a fuller claim (at least 12 characters).';
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = 'Analysing…';
+  empty.style.display = 'none';
+  result.style.display = 'none';
+  try {
+    const response = await fetch('/api/analyze', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({claim, language, context})
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.error || 'The analysis service could not complete the request.');
+    safeText(document.getElementById('verdict'), data.verdict);
+    safeText(document.getElementById('summary'), data.summary);
+    addItems('reasons', data.reasons);
+    addItems('steps', data.verification_steps);
+    const sources = document.getElementById('sources');
+    sources.replaceChildren();
+    (Array.isArray(data.sources) ? data.sources : []).forEach(s => {
+      const p = document.createElement('p');
+      if (s.url && /^https?:\/\//i.test(s.url)) {
+        const a = document.createElement('a');
+        a.href = s.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = s.title || s.url;
+        p.appendChild(a);
+      } else {
+        p.textContent = (s.title || 'Suggested source') + (s.note ? ' — ' + s.note : '');
+      }
+      sources.appendChild(p);
+    });
+    const status = document.getElementById('status');
+    status.className = 'status ' + (data.label === 'supported' ? 'good' : data.label === 'likely_false' ? 'danger' : 'caution');
+    safeText(status, data.label === 'supported' ? 'Evidence appears supportive' : data.label === 'likely_false' ? 'Potentially misleading — verify' : 'Needs verification');
+    safeText(document.getElementById('caution'), data.caution || 'This is an AI-assisted preliminary assessment, not an authoritative fact-check.');
+    result.style.display = 'block';
+  } catch (err) {
+    empty.style.display = 'flex';
+    errorBox.textContent = err.message || 'Something went wrong. Please try again.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Analyse claim';
+  }
+});
+document.getElementById('copyBtn').addEventListener('click', async () => {
+  const text = [
+    document.getElementById('verdict').textContent,
+    document.getElementById('summary').textContent,
+    'Reasons: ' + [...document.querySelectorAll('#reasons li')].map(x => x.textContent).join('; '),
+    'Verification steps: ' + [...document.querySelectorAll('#steps li')].map(x => x.textContent).join('; '),
+    document.getElementById('caution').textContent
+  ].join('\n\n');
+  try { await navigator.clipboard.writeText(text); document.getElementById('copyBtn').textContent = 'Copied'; }
+  catch { document.getElementById('copyBtn').textContent = 'Copy unavailable'; }
+});
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+}
+</script>
+</body>
+</html>

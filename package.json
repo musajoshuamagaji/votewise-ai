@@ -1,0 +1,10 @@
+{
+  "name": "votewise-ai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Nonpartisan AI-assisted election claim assessment MVP",
+  "engines": {
+    "node": ">=20"
+  }
+}
